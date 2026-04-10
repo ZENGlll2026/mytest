@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+    <xacro:include filename="$(find fishbot_description)/urdf/fishbot/common_inertia.xacro"/>
+    <!-- 机器人Camera部分,惯性测量传感器 -->
+    <xacro:macro name="camera_xacro" params="xyz">
+        <link name="camera_link">
+            <!--部件外观描述-->
+            <visual>
+                <!--沿着机器人几何中心的偏移和旋转描述-->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!--几何形状   -->
+                <geometry>
+                <!-- 这里可以选择不同的几何形状，如圆柱体、立方体等 ,现在是圆柱体--> 
+                    <box size="0.02 0.10 0.02"/>
+                    
+                </geometry>
+                <!--材质颜色描述-->
+                <material name="black">
+                    <color rgba="0.0 0.0 0.0 0.5"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <box size="0.02 0.10 0.02"/>
+                </geometry>
+                <material name="black">
+                    <color rgba="0.0 0.0 0.0 1"/>
+                </material>
+            </collision>
+            <xacro:box_inertia m="0.01" w="0.02" h="0.10" d="0.02"/>
+        </link>
+
+        <link name="camera_optical_link"></link>
+
+        <!-- 机器人的关节,camera与身体的连接 -->
+        <joint name="camera_joint" type="fixed">
+            <!--连接的父链接和子链接-->
+            <parent link="base_link"/>
+            <child link="camera_link"/>
+            <!--关节位置描述-->
+            <origin xyz="${xyz}" />
+        </joint>
+
+        <joint name="camera_optical_joint" type="fixed">
+            <!--连接的父链接和子链接-->
+            <parent link="camera_link"/>
+            <child link="camera_optical_link"/>
+            <!--关节位置描述-->
+            <origin xyz="0.0 0.0 0.0" rpy="${-pi/2} 0.0 ${-pi/2}"/>
+        </joint>
+        
+    </xacro:macro>
+        
+  
+    
+</robot>

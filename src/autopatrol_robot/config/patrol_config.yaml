@@ -1,0 +1,10 @@
+/patrol_node:
+  ros__parameters:
+    initial_point: [0.0, 0.0, 0.0]
+    target_points: [
+      6.0, 0.0, 0.0,
+     6.0, 5.0, 1.57,
+     0.0, 5.0, 3.14,
+     0.0, 0.0, 0.0,
+     ]
+    use_sim_time: false
