@@ -39,7 +39,7 @@ colcon build
 ```
 ros2 run turtlesim turtlesim_node
 ```
-运行节点
+运行控制节点
 
 ```
 source install/setup.bash

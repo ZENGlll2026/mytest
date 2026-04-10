@@ -50,6 +50,8 @@ sudo apt install ros-$ROS_DISTRO-robot-state-publisher  ros-$ROS_DISTRO-joint-st
 colcon build
 ```
 
+#### 启动3个新的终端
+
 运行仿真
 
 ```
