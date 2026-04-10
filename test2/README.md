@@ -20,6 +20,9 @@
 - 系统版本： Ubunt22.04
 - ROS 版本：ROS 2 Humble
 
+导航逻辑程序预先定义多个巡检目标点坐标
+- 可在/src/autopatrol_robot/config/patrol_config.yaml下对目标坐标进行更改
+
 ### 2.1安装
 
 本项目建图采用 slam-toolbox，导航采用 Navigation 2 ,仿真采用 Gazebo，运动控制采用 ros2-control 实现，构建之前请先安装依赖，指令如下：
