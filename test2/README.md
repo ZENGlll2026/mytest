@@ -10,7 +10,6 @@
 各功能包功能如下：
 - fishbot_description 机器人描述文件，包含仿真相关配置
 - fishbot_navigation2 机器人导航配置文件
-- fishbot_application 机器人导航应用 Python 代码
 - autopatrol_robot  自动巡检实现功能包
 
 ## 2.使用方法
