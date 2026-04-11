@@ -43,7 +43,7 @@ ros2 run turtlesim turtlesim_node
 
 ```
 source install/setup.bash
-ros2 run test_turtlrt turtle_node_RM
+ros2 run test_turtle turtle_node_RM
 ```
 
 
